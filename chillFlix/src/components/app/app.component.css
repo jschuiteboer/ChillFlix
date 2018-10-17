@@ -1,0 +1,25 @@
+
+h1{
+    color: red;
+    font-size: 100px;
+}
+
+h2{
+    color: white;
+    text-align: center;
+    font-size: 60px;
+    padding-top: 60px;
+}
+
+button {
+    margin-top:167px;
+    width:800px;
+    height:100px;
+
+    background: red; 
+    color: white;
+    font-size: 60px;
+    padding: 3px;
+    border-radius: 5px;
+    border: 1px solid black;
+ }
