@@ -1,20 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  
-</div>
-<div class="container">
-  
-</div>
-<h2>movies for real men</h2>
 
-<div style="text-align:center;"> 
-<button type="button" class="btn btn-primary btn-lg">Do Nothing Cool</button>
+<a [routerLink]="['/home']" routerLinkActive="active">home-</a>
+<a [routerLink]="['/movie-list']" routerLinkActive="active">Movies</a>
 
+<router-outlet>
 
-
-
-</div>
+</router-outlet>
 
