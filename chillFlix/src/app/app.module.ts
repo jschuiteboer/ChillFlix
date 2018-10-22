@@ -6,13 +6,14 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { AppRoutingModule } from './app-routing.module';
+import { MovieService } from './services/movie.service';
 
 
 
 @NgModule({
   declarations: [AppComponent,HomeComponent, MovieListComponent],
   imports: [BrowserModule, AppRoutingModule  ],
-  providers: [ ],
+  providers: [MovieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
