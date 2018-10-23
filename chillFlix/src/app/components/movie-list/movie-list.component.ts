@@ -1,20 +1,38 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MovieService } from 'src/app/services/movie.service';
+import { Subscription } from 'rxjs';
+import { IMovie } from 'src/app/models/movie';
 
 
 @Component({
     selector: 'movie-list',
     templateUrl: 'movie-list.component.html',
-    
     styleUrls: ['movie-list.component.scss']
 })
 export class MovieListComponent implements OnInit {
 
     public movies = [];
-
+    public errorMsg:string;
+    private subscription: Subscription;
     constructor(private movieService: MovieService){}
 
-    ngOnInit(){
-        this.movies = this.movieService.getMovies();
+    ngOnInit() {
+       //this.movieService.getMovies()
+       //     .subscribe(data => this.movies=data);
+       this.subscription = this.movieService.getMovies().subscribe( 
+            (data: Array<IMovie>) =>{
+                this.movies = data;
+                console.log('Observer got new/next films: ' + data);
+            },
+            err =>{
+                this.errorMsg= err;
+                console.error('Getting films failed with error: ' + err);
+            }
+        );
     }
+
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
+    }
+
 }
