@@ -3,10 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './components/home/home.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 
-
-const routes: Routes = [
+const approutes: Routes = [
+  { path: 'movie-list/:id', component: MovieDetailsComponent },
   { path: 'movie-list', component: MovieListComponent },
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
@@ -14,7 +15,7 @@ const routes: Routes = [
 
 
   @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(approutes)],
   exports: [RouterModule]
   })
   export class AppRoutingModule { }

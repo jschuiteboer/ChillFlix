@@ -9,8 +9,9 @@
 
   <div style="text-align:center" >
     <ul *ngFor="let movie of movies" >
-      <h2 style="color:white;">{{movie.id}}.{{movie.title}}   {{movie.year}}
+      <h2 style="color:white;">{{movie.id}}.   
+        <a href="movie-list/{{movie.id}}">{{movie.title}}</a> {{movie.year}}
       </h2>
-    </ul>
-    <br/>
+    </ul><br/>
   </div>
+
