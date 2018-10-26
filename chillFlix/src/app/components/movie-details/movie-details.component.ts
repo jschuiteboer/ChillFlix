@@ -13,12 +13,13 @@ import { IMovie } from 'src/app/models/movie';
 
 export class MovieDetailsComponent implements OnInit, OnDestroy {
 
-  private movieUrl: String;
+  private movie: IMovie;
   private subscription : Subscription;
 
   constructor(
     private route: ActivatedRoute,
-    private movieService: MovieService) { }
+    private movieService: MovieService
+  ) { }
 
     ngOnInit() {
       let movieId:number = +this.route.snapshot.params['id'];
@@ -26,9 +27,7 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
       this.subscription = this.movieService.getMovieById(movieId)
         .subscribe(
       (data: IMovie) => {
-              if(data) {
-                this.movieUrl = 'https://www.youtube.com/embed/' + data.url;
-              }
+              if(data) this.movie = data;
             },
       err => console.error('getMovieById failed', err)
         );

@@ -1,17 +1,14 @@
-<!--component html goes here -->
 <div style="text-align:center" >
-    <h1>
-     Top 10 Movie list from IMDB!
-    </h1>
-    <h2>{{errorMsg}}</h2>
+  <h1>Top 10 Movie list from IMDB!</h1>
+  <h2>{{errorMsg}}</h2>
 </div>
 
-
-  <div style="text-align:center" >
-    <ul *ngFor="let movie of movies" >
-      <h2 style="color:white;">{{movie.id}}.   
-        <a href="movie-list/{{movie.id}}">{{movie.title}}</a> {{movie.year}}
-      </h2>
-    </ul><br/>
-  </div>
-
+<div style="text-align:center" >
+  <ul *ngFor="let movie of movies" >
+    <h2 style="color:white;">
+      <a [routerLink]="movie.id">
+        {{movie.title}} {{movie.year}}
+      </a>
+    </h2>
+  </ul>
+</div>
