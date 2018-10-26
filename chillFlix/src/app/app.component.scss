@@ -1,17 +1,23 @@
-.navbar-brand{
-    color: red;
-    font-size: 30px;
-    font-weight: 900;
-}
+
 
 nav{
     background-color: black;
+   
+    a{
+        color: white; 
+       
+        .navbar-brand{
+            color: red;
+            font-size: 30px;
+            font-weight: 900;
+        
+        
+        } 
+    }
 }
 
 
 
-a{
-    color: white;  
-}
+
 
 

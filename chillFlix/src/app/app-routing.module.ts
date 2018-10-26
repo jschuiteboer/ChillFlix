@@ -6,7 +6,7 @@ import { MovieListComponent } from './components/movie-list/movie-list.component
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 
-const approutes: Routes = [
+const appRoutes: Routes = [
   { path: 'movie-list/:id', component: MovieDetailsComponent },
   { path: 'movie-list', component: MovieListComponent },
   { path: 'home', component: HomeComponent },
@@ -15,7 +15,7 @@ const approutes: Routes = [
 
 
   @NgModule({
-  imports: [RouterModule.forRoot(approutes)],
+  imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule]
   })
   export class AppRoutingModule { }
