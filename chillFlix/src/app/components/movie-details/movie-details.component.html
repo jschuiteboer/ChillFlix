@@ -1,4 +1,3 @@
-
-<div>
-  <iframe width="1196" height="673" [src]="getEnbedUrl()" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div *ngIf="movieUrl">
+  <iframe width="1196" height="673" [src]="movieUrl | safe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
