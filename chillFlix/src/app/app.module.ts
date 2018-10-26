@@ -7,9 +7,10 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { MovieService } from './services/movie.service';
 import { SafePipe } from "./pipes/SafePipe";
 
+
 @NgModule({
   declarations: [AppComponent, routingComponents, SafePipe],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [MovieService],
   bootstrap: [AppComponent]
 })

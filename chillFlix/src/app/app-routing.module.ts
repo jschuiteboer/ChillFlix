@@ -8,15 +8,16 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
 
 const appRoutes: Routes = [
   { path: 'movie-list/:id', component: MovieDetailsComponent },
+  { path: 'admin', loadChildren: './modules/admin/admin.module#AdminModule'},
   { path: 'movie-list', component: MovieListComponent },
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
-
   @NgModule({
-  imports: [RouterModule.forRoot(appRoutes)],
+  imports: [RouterModule.forRoot(appRoutes, {enableTracing:true})],
   exports: [RouterModule]
   })
+  
   export class AppRoutingModule { }
   export const routingComponents = [HomeComponent,MovieListComponent,MovieDetailsComponent]
