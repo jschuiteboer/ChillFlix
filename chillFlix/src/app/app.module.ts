@@ -5,12 +5,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { MovieService } from './services/movie.service';
-
-
+import { SafePipe } from "./pipes/SafePipe";
 
 
 @NgModule({
-  declarations: [AppComponent, routingComponents],
+  declarations: [AppComponent, routingComponents, SafePipe],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [MovieService],
   bootstrap: [AppComponent]
