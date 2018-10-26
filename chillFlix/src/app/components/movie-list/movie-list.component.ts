@@ -26,7 +26,7 @@ export class MovieListComponent implements OnInit, OnDestroy {
             },
             err =>{
                 this.errorMsg= err;
-                console.error('Getting films failed with error: ' + err);
+                console.error('Getting films failed with error:', err);
             }
         );
     }

@@ -1,10 +1,8 @@
 package com.geenidee.chillflix.ChillFlix.movies;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-import java.util.UUID;
-
-@Repository
-public interface MovieRepository extends PagingAndSortingRepository<Movie, UUID> {
+@RepositoryRestResource
+public interface MovieRepository extends PagingAndSortingRepository<Movie, Long> {
 }
