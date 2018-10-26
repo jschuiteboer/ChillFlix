@@ -5,13 +5,24 @@ import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.UUID;
 
 @Data
 @Entity
 public class Movie {
     @Id
     @GeneratedValue
-    private Long id;
+    private UUID id;
 
     private String title;
+
+    private int year;
+
+    private String url;
+
+    public Movie(String title, int year, String youtubeId) {
+        this.setTitle(title);
+        this.setYear(year);
+        this.setUrl("https://www.youtube.com/embed/" + youtubeId);
+    }
 }
