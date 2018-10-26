@@ -1,7 +1,11 @@
 
 
 nav{
-    background-color: black;
+        
+         
+   &.bg-dark{
+       background-color: black !important;
+   }  
    
     a{
         color: white; 
@@ -9,8 +13,7 @@ nav{
         &.navbar-brand{
             color: red;
             font-size: 30px;
-            font-weight: 900;
-        
+            font-weight: 900;        
         
         } 
     }

@@ -18,7 +18,7 @@ export class MovieService {
   }
 
   getMovieById(id: number): Observable<IMovie> {
-    return this.http.get(this.url + "/" + id)
+    return this.http.get<IMovie>(this.url + "/" + id)
   }
 
 }
