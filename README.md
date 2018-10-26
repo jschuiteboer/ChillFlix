@@ -6,3 +6,5 @@
     in server folder: `mvn spring-boot:run`
 2. run client:  
     in chillFlix folder: `ng serve`
+
+the server will run on localhost:8080, the client on localhost:4200
