@@ -19,3 +19,4 @@ const approutes: Routes = [
   exports: [RouterModule]
   })
   export class AppRoutingModule { }
+  export const routingComponents = [HomeComponent,MovieListComponent,MovieDetailsComponent]
