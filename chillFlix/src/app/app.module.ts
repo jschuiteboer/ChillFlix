@@ -8,9 +8,10 @@ import { MovieService } from './services/movie.service';
 
 
 
+
 @NgModule({
   declarations: [AppComponent, routingComponents],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [MovieService],
   bootstrap: [AppComponent]
 })
