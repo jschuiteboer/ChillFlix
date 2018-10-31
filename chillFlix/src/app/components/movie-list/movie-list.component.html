@@ -1,9 +1,9 @@
-<div style="text-align:center" >
+<div>
   <h1>Top 10 Movie list from IMDB!</h1>
   <h2>{{errorMsg}}</h2>
 </div>
 
-<div style="text-align:center" >
+<div>
   <ul *ngFor="let movie of movies" >
     <h2 style="color:white;">
       <a [routerLink]="movie.id">

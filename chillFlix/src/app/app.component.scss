@@ -1,20 +1,44 @@
 
-
 nav{
-    background-color: black;
-   
+               
+   &.bg-dark{
+       background-color: black !important;
+   } 
+      
     a{
         color: white; 
        
+        &.slideInLeft {
+            -webkit-animation-name: slideInLeft;
+            animation-name: slideInLeft;
+            -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+
+        @keyframes slideInLeft {
+            0% {
+                -webkit-transform: translateX(-100%);
+                transform: translateX(-100%);
+                visibility: visible;
+            }
+            100% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+            }
+        } 
+
         &.navbar-brand{
             color: red;
             font-size: 30px;
-            font-weight: 900;
-        
-        
+            font-weight: 900;        
+            
         } 
-    }
+    }  
 }
+
+
 
 
 
