@@ -12,3 +12,19 @@
     </h2>
   </ul>
 </div>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class= "col-lg-3 col-md-4 col-sm-12" *ngFor="let movie of movies">
+      <div class="card" [routerLink]="movie.id" >
+          <img class="card-img-top img-fluid" src="http://i3.ytimg.com/vi/erLk59H86ww/hqdefault.jpg" alt="Card image cap">
+          <div class="card-body">
+              <h4 class="card-title" >{{movie.title}}</h4>
+              <p class="card-text">awsome shit</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
