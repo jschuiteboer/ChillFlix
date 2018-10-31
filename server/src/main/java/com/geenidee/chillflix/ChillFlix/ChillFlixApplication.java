@@ -30,16 +30,19 @@ public class ChillFlixApplication {
 	}
 
 	@Bean
-	public ApplicationRunner initData(MovieRepository repository) {
+    public YouTube youtube() {
+        NetHttpTransport httpTransport = new NetHttpTransport();
+
+        JsonFactory jsonFactory = new JacksonFactory();
+
+        return new YouTube.Builder(httpTransport, jsonFactory, request -> {})
+                .setApplicationName("youtube-cmdline-test")
+                .build();
+    }
+
+	@Bean
+	public ApplicationRunner initData(YouTube youtube, MovieRepository repository) {
         return args -> {
-            NetHttpTransport httpTransport = new NetHttpTransport();
-
-            JsonFactory jsonFactory = new JacksonFactory();
-
-            YouTube youtube = new YouTube.Builder(httpTransport, jsonFactory, request -> {})
-                    .setApplicationName("youtube-cmdline-test")
-                    .build();
-
             PlaylistItemListResponse response = youtube.playlistItems()
                     .list("snippet")
                     .setPlaylistId(PLAYLIST_ID)
