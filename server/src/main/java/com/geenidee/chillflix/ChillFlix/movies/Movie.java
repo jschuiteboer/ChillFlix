@@ -18,10 +18,4 @@ public class Movie {
     private int year;
 
     private String url;
-
-    public Movie(String title, int year, String youtubeId) {
-        this.setTitle(title);
-        this.setYear(year);
-        this.setUrl("https://www.youtube.com/embed/" + youtubeId);
-    }
 }
