@@ -52,16 +52,22 @@ public class ChillFlixApplication {
             for(PlaylistItem item : response.getItems()) {
                 PlaylistItemSnippet snippet = item.getSnippet();
 
-                Movie movie = new Movie();
+                try {
 
-                movie.setTitle(snippet.getTitle());
+                    Movie movie = new Movie();
 
-                ZonedDateTime publishDate = ZonedDateTime.parse(snippet.getPublishedAt().toStringRfc3339());
-                movie.setYear(publishDate.getYear());
+                    movie.setTitle(snippet.getTitle());
 
-                movie.setUrl("https://www.youtube.com/embed/" + snippet.getResourceId().getVideoId());
+                    ZonedDateTime publishDate = ZonedDateTime.parse(snippet.getPublishedAt().toStringRfc3339());
+                    movie.setYear(publishDate.getYear());
 
-                repository.save(movie);
+                    movie.setUrl("https://www.youtube.com/embed/" + snippet.getResourceId().getVideoId());
+
+                    movie.setThumbnail(snippet.getThumbnails().getMaxres().getUrl());
+
+                    repository.save(movie);
+                } catch(Exception ignored) {
+                }
             }
         };
 	}

@@ -18,4 +18,6 @@ public class Movie {
     private int year;
 
     private String url;
+
+    private String thumbnail;
 }
