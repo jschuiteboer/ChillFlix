@@ -3,4 +3,5 @@ export interface IMovie {
     title: string;
     year: number;
     url : string;
+    thumnail: string;
 }
