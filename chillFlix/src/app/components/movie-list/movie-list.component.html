@@ -1,6 +1,7 @@
 <div class="container-fluid">
   <div class="row">
-    <div class= "col-xl-3 col-lg-3 col-md-4 col-sm-12 mb-4" *ngFor="let movie of movies">
+    <div class= "col-xl-3 col-lg-3 col-md-4 col-sm-12 mb-4" *ngFor="let movie of movies$ | async">
+
       <div class="card" [routerLink]="movie.id" >
           <img class="card-img-top img-fluid" src="{{movie.thumbnail}}" alt="Card image cap">
           <div class="card-body">
@@ -8,6 +9,7 @@
               <p class="card-text">awsome shit</p>
           </div>
       </div>
+
     </div>
   </div>
 </div>
