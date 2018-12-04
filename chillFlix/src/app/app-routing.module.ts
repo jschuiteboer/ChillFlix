@@ -14,10 +14,19 @@ const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
-  @NgModule({
-  imports: [RouterModule.forRoot(appRoutes, {enableTracing:true})],
-  exports: [RouterModule]
-  })
+@NgModule({
+  imports: [
+    RouterModule.forRoot(appRoutes, { enableTracing: true }),
+  ],
+  exports: [
+    RouterModule,
+  ]
+})
   
-  export class AppRoutingModule { }
-  export const routingComponents = [HomeComponent,MovieListComponent,MovieDetailsComponent]
+export class AppRoutingModule { }
+
+export const routingComponents = [
+  HomeComponent,
+  MovieListComponent,
+  MovieDetailsComponent
+];
