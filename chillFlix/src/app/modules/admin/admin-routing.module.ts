@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const adminRoutes: Routes = [
-
   { path: 'dashboard', component: DashboardComponent },
   { path: '', component: DashboardComponent, pathMatch: 'full' }
 ];

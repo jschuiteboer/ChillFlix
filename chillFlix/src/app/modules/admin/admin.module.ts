@@ -15,6 +15,10 @@ import { MovieFormComponent } from './components/movie-form/movie-form.component
     DashboardComponent,
     MovieFormComponent
   ],
-  imports: [ AdminRoutingModule, CommonModule, ReactiveFormsModule ],
+  imports: [
+    AdminRoutingModule,
+    CommonModule,
+    ReactiveFormsModule
+  ],
 })
 export class AdminModule { }
