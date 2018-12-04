@@ -1,0 +1,25 @@
+<form [formGroup]="form">
+  <div class="form-group">
+    <label>Title</label>
+    <input type="text" class="form-control" formControlName="title">
+  </div>
+
+  <div class="form-group">
+    <label>Year</label>
+    <input type="text" class="form-control" formControlName="year">
+  </div>
+
+  <div class="form-group">
+    <label>Url</label>
+    <input type="text" class="form-control" formControlName="url">
+  </div>
+
+  <div class="form-group">
+    <label>Thumbnail</label>
+    <input type="text" class="form-control" formControlName="thumbnail">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{{ form.value | json }}
