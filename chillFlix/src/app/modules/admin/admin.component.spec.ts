@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 
 import { AdminComponent } from './admin.component';
+import { AdminRoutingModule } from "./admin-routing.module";
+import { DashboardComponent } from "./components/dashboard/dashboard.component";
+import { RouterTestingModule } from "@angular/router/testing";
 
 describe('AdminComponent', () => {
   let component: AdminComponent;
@@ -8,7 +12,17 @@ describe('AdminComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminComponent ]
+      declarations: [
+        AdminComponent,
+        DashboardComponent,
+      ],
+      imports: [
+        AdminRoutingModule,
+        RouterTestingModule.withRoutes([]),
+      ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA,
+      ]
     })
     .compileComponents();
   }));
